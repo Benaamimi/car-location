@@ -1,0 +1,41 @@
+CREATE TABLE user (
+id int UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+email VARCHAR(255) NOT NULL UNIQUE,
+mdp VARCHAR(255)
+username VARCHAR(255)
+admin BOOLEAN,
+);
+
+CREATE TABLE car (
+id int UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+name VARCHAR(255),
+description text,
+image VARCHAR(255),
+price FLOAT
+);
+
+CREATE TABLE contact (
+id int UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+email VARCHAR(255),
+content TEXT,
+date DATETIME
+);
+
+Creer une table reservation
+    id entier non signé clé primaire auto increment
+    date_start DATE
+    date_end DATE
+    total_price float
+    id_user entier non signé clé secondaire id (user)
+    id_car entier non signé clé secondaire id (car)
+
+CREATE TABLE reservation (
+id int UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+date_start DATE,
+date_end DATE,
+total_price FLOAT,
+id_user INT UNSIGNED,
+id_car INT UNSIGNED,
+CONSTRAINT fk_user FOREIGN KEY (id_user) REFERENCES user(id),
+CONSTRAINT fk_car FOREIGN KEY (id_car) REFERENCES car(id)
+);

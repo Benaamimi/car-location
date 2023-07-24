@@ -1,0 +1,32 @@
+Creer une base de donnee car_location
+Mettre dessus
+
+Creer une  table user
+    id entier non signé clé primaire auto increment
+    email chaine de caractere 255 unique
+    mdp chaine de caractere 255
+    username chaine de caractere 255
+    admin booleen
+
+//Affiche la structrure de ma table
+
+Creer une tables car
+    id entier non signé clé primaire auto increment
+    name chaine de caractere 255
+    description text
+    image chaine de caractere 255
+    price float
+
+Creer une table contact
+    id entier non signé clé primaire auto increment
+    email chaine de caractere 255
+    content text
+    date DATETIME
+
+Creer une table reservation
+    id entier non signé clé primaire auto increment
+    date_start DATE
+    date_end DATE
+    total_price float
+    id_user entier non signé clé secondaire id (user)
+    id_car entier non signé clé secondaire id (car)
