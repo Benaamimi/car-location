@@ -1,9 +1,9 @@
 CREATE TABLE user (
 id int UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 email VARCHAR(255) NOT NULL UNIQUE,
-mdp VARCHAR(255)
-username VARCHAR(255)
-admin BOOLEAN,
+mdp VARCHAR(255),
+username VARCHAR(255),
+admin BOOLEAN
 );
 
 CREATE TABLE car (
@@ -39,3 +39,10 @@ id_car INT UNSIGNED,
 CONSTRAINT fk_user FOREIGN KEY (id_user) REFERENCES user(id),
 CONSTRAINT fk_car FOREIGN KEY (id_car) REFERENCES car(id)
 );
+
+modification du type du champ price dans la table car:
+ALTER TABLE car;
+ALTER TABLE car MODIFY price DECIMAL(8, 2);
+
+ajouter une contraite dans la table reservation :
+ALTER TABLE reservation ADD constraint fk_id_car FOREIGN KEY (id_car) REFERENCES car(id);
