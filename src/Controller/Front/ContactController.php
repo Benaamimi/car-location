@@ -2,16 +2,19 @@
 
 namespace App\Controller\Front;
 
-class ContactController
+use App\Controller\AbstractController;
+
+
+class ContactController extends AbstractController
 {
-    public function index($params)
+    public function index()
     {
-        echo $params['id'];
+        echo 'hello !!!';
     }
 
     public function saveForm()
     {
-        
+        echo 'hello';
     }
 
 

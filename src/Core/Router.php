@@ -5,6 +5,8 @@ namespace App\Core;
 use App\Controller\Front\HomeController;
 use App\Controller\Front\ContactController;
 use App\Controller\Front\CarController;
+use App\Controller\Front\reservationController;
+
 
 class Router
 {
@@ -25,17 +27,22 @@ class Router
             $this->currentController->index($params);
         });
 
-        $this->add_route('/contact/form', function(){
+        $this->add_route('/contact/form', function($params){
             $this->currentController = new ContactController();
-            $this->currentController->saveForm();
+            $this->currentController->saveForm($params);
         });
 
-        $this->add_route('/car/{test}', function($params){
+        $this->add_route('/car', function($params){
             $this->currentController = new CarController();
             $this->currentController->index($params);
         });
-
         // Ajouter une route /car/{id}, function creera une objet de type CarController et il appellera la method index() {require_once templates->front>car.php H1 Bienvenue dans la page des voitures}
+        
+        $this->add_route('/reservation/{id}', function($params){
+            $this->currentController = new reservationController();
+            $this->currentController->index($params);
+        });
+
 
     }
 

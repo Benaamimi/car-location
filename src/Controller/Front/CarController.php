@@ -2,11 +2,13 @@
 
 namespace App\Controller\Front;
 
-class CarController
+use App\Controller\AbstractController;
+
+class CarController extends AbstractController
 {
-    public function index($params)
+    public function index()
     {
-        $params['test'];
+       
         require_once "../templates/front/car.php";
    
     }
