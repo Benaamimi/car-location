@@ -25,7 +25,7 @@
           <a class="nav-link" href="/car-location/contact/">Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/car-location/">Inscription</a>
+          <a class="nav-link" href="/car-location/inscription">Inscription</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Connexion</a>
@@ -38,3 +38,10 @@
 </header>
 
 <main>
+    <?php
+
+
+    // j'ai remplacer le `use App\Core\Session` par `App\Core\` devant ma fonction static 
+   App\Core\Session::getFlashMessage();
+
+    
